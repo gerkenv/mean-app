@@ -5,6 +5,22 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 
+// get database configuration
+const config = require('./config/database');
+
+// establish connection to database
+mongoose.connect(config.database);
+
+// add event listener to 'connection' event
+mongoose.connection.on('connected', () => {
+    console.log('Connected to database ' + config.database);
+});
+
+// add event listener to 'error' event
+mongoose.connection.on('error', (err) => {
+    console.log('Database error:\n' + err);
+});
+
 const app = express();
 
 // '/users' routes
