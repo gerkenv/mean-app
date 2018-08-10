@@ -1,14 +1,25 @@
 const express = require('express');
 const router = express.Router();
-const user = require('../models/user');
-const passport = require('passpoer');
+const passport = require('passport');
 const jwt = require('jsonwebtoken');
+
+const User = require('../models/user');
 
 // './register' POST route
 router.post('/register', (req, res, next) => {
-    let newUser = new user({
+    let newUser = new User({
         name: req.body.name,
+        email: req.body.email,
+        username: req.body.username,
+        password: req.body.password
+    });
 
+    User.addUser(newUser, (err, user) => {
+        if (err) {
+            res.json({success: false, msg: "User registratiion is failed"});
+        } else {
+            res.json({success: true, msg: "User registration is accomplished"});
+        }
     });
 });
 

@@ -6,12 +6,12 @@ const config = require('../config/database');
 const userSchema = mongoose.Schema({
     name: {
         type:String
-    },
+    }, 
     email: {
         type: String,
         required: true,
     },
-    login:  {
+    username:  {
         type: String,
         required: true,
     },
@@ -30,4 +30,14 @@ module.exports.getUserById = (id, callback) => {
 module.exports.getUserByName = (name, callback) => {
     const query = {name: name};
     User.findOne(query, callback);
+};
+
+module.exports.addUser = (newUser, callback) => {
+    bcrypt.genSalt(10, (err, salt) => {
+        bcrypt.hash(newUser.password, salt, (err, hash) => {
+            if (err) throw err;
+            newUser.password = hash;
+            newUser.save(callback);
+        });
+    });
 };
