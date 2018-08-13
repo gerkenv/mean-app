@@ -38,6 +38,12 @@ app.use(express.static(path.join(__dirname, 'public')));
 // enable body-parser middleware to parse HTML forms
 app.use(bodyParser.json());
 
+// passport middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+require('./config/passport')(passport);
+
 // define namespace for `users` routes
 app.use('/users', users);
 
