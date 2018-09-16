@@ -9,11 +9,11 @@ const userSchema = mongoose.Schema({
     },
     email: {
         type: String,
-        required: true,
+        required: true
     },
     username:  {
         type: String,
-        required: true,
+        required: true
     },
     password: {
         type: String,
@@ -24,18 +24,24 @@ const userSchema = mongoose.Schema({
 // const User = module.exports = mongoose.model('User', userSchema);
 const User = mongoose.model('User', userSchema);
 
+// module.exports.getUserById = (id, callback) => {
 User.getUserById = (id, callback) => {
     User.findById(id, callback);
 };
 
+// module.exports.getUserByUsername = (name, callback) => {
 User.getUserByUsername = (name, callback) => {
     const query = {username: name};
     User.findOne(query, callback);
 };
 
+// module.exports.addUser = (newUser, callback) => {
 User.addUser = (newUser, callback) => {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
+            console.log(">>> newUser");
+            console.log(newUser);
+            console.log(">>> newUser");
             if (err) throw err;
             newUser.password = hash;
             newUser.save(callback);
@@ -43,6 +49,7 @@ User.addUser = (newUser, callback) => {
     });
 };
 
+// module.exports.comparePasswords = (candidatePassword, hash, callback) => {
 User.comparePasswords = (candidatePassword, hash, callback) => {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if (err) throw err;
