@@ -6,7 +6,7 @@ const config = require('../config/database');
 const userSchema = mongoose.Schema({
     name: {
         type:String
-    }, 
+    },
     email: {
         type: String,
         required: true,
@@ -21,6 +21,7 @@ const userSchema = mongoose.Schema({
     }
 });
 
+// const User = module.exports = mongoose.model('User', userSchema);
 const User = mongoose.model('User', userSchema);
 
 User.getUserById = (id, callback) => {
@@ -45,7 +46,7 @@ User.addUser = (newUser, callback) => {
 User.comparePasswords = (candidatePassword, hash, callback) => {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if (err) throw err;
-        callback(null, isMatch); 
+        callback(null, isMatch);
     });
 };
 

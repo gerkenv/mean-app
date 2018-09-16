@@ -17,7 +17,7 @@ router.post('/register', (req, res, next) => {
 
     User.addUser(newUser, (err, user) => {
         if (err) {
-            res.json({success: false, msg: "User registratiion is failed"});
+            res.json({success: false, msg: "User registration is failed"});
         } else {
             res.json({success: true, msg: "User registration is accomplished"});
         }
@@ -38,7 +38,7 @@ router.post('/authenticate', (req, res, next) => {
         User.comparePasswords(password, user.password, (err, isMatch) => {
             if (err) throw err;
             if (isMatch) {
-                
+
                 const plainUser = {
                     id: user._id,
                     name: user.name,
@@ -65,7 +65,9 @@ router.post('/authenticate', (req, res, next) => {
 
 // './profile' GET route
 router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
+    console.log(">>> req");
     console.log(req);
+    console.log(">>> req");
     res.json({user: req.user});
 });
 
