@@ -29,4 +29,20 @@ export class AuthService {
       {headers: headers}
     ).map(res => res.json());
   }
+
+  storeUserData(jwt, user) {
+    // store token and user data
+    localStorage.setItem('id_token', jwt);
+    // local storage can only store strings
+    localStorage.setItem('user', JSON.stringify(user));
+    // set current token and user
+    this.authToken = jwt;
+    this.user = user;
+  }
+
+  logout() {
+    this.authToken = null;
+    this.user = null;
+    localStorage.clear();
+  }
 }
