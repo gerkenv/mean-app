@@ -11,22 +11,22 @@ export class AuthService {
   constructor(private _http: Http) { }
 
   registerUser(user) {
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.post(
       'http://localhost:3000/users/register',
       user,
-      {headers:headers}
+      {headers: headers}
     ).map(res => res.json());
   }
 
   authenticateUser(user) {
-    let headers = new Headers();
+    const headers = new Headers();
     headers.append('Content-Type', 'application/json');
     return this._http.post(
       'http://localhost:3000/users/authenticate',
       user,
-      {headers:headers}
+      {headers: headers}
     ).map(res => res.json());
   }
 }
