@@ -8,10 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-// user: String;
-// username: String;
-// email: String;
-// password: String;
 user: object;
 
   constructor(
@@ -22,9 +18,6 @@ user: object;
   ngOnInit() {
     this._authService.getProfile().subscribe(profile => {
       this.user = profile.user;
-      // this.username = profile.username;
-      // this.email = profile.email;
-      // this.password = profile.password;
     },
     err => {
       console.log(err);
