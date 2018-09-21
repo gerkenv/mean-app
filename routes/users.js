@@ -10,16 +10,49 @@ const config = require('../config/database');
 router.post('/register', (req, res, next) => {
     let newUser = new User({
         name: req.body.name,
-        email: req.body.email,
         username: req.body.username,
+        email: req.body.email,
         password: req.body.password
+    });
+
+    // validate name
+    if (false === User.validateString(newUser.name)) {
+        res.json({success: false, msg: "Enter a name"});
+        return;
+    }
+
+    // validate username
+    if (false === User.validateString(newUser.username)) {
+        res.json({success: false, msg: "Enter an username"});
+        return;
+    }
+
+    // validate email
+    if (false === User.validateString(newUser.email)) {
+        res.json({success: false, msg: "Enter an email"});
+        return;
+    }
+
+    // validate password
+    if (false === User.validateString(newUser.password)) {
+        res.json({success: false, msg: "Enter a password"});
+        return;
+    }
+
+    // check username availability
+    User.isUsernameAvailable( newUser.username, (err, isAvailable) => {
+        if (err) throw err;
+        if (!isAvailable) {
+            res.json({success: false, msg: "The username is busy"});
+            return;
+        }
     });
 
     User.addUser(newUser, (err, user) => {
         if (err) {
-            res.json({success: false, msg: "User registration is failed"});
+            res.json({success: false, msg: "The registration is failed"});
         } else {
-            res.json({success: true, msg: "User registration is accomplished"});
+            res.json({success: true, msg: "The registration is accomplished"});
         }
     });
 });
@@ -29,10 +62,22 @@ router.post('/authenticate', (req, res, next) => {
     const username = req.body.username;
     const password = req.body.password;
 
+    // validate username
+    if (false === User.validateString(username)) {
+        res.json({success: false, msg: "Enter the username"});
+        return;
+    }
+
     User.getUserByUsername(username, (err, user) => {
         if (err) { throw err; }
         if (!user) {
-            res.json({success: false, msg: "User is not found."});
+            res.json({success: false, msg: "Username is not found"});
+            return;
+        }
+
+        // validate password
+        if (false === User.validateString(password)) {
+            res.json({success: false, msg: "Enter the password"});
             return;
         }
 
@@ -58,7 +103,7 @@ router.post('/authenticate', (req, res, next) => {
                     user: plainUser
                 });
             } else {
-                res.json({success: false, msg: "Password does not match."});
+                res.json({success: false, msg: "Invalid credentials"});
             }
         });
     });
