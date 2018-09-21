@@ -22,7 +22,6 @@ export class LoginComponent implements OnInit {
   }
 
   onLoginSubmit() {
-    console.log('login requested!');
     const user = {
       username: this.username,
       password: this.password
