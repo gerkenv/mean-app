@@ -30,6 +30,17 @@ export class AuthService {
     ).map(res => res.json());
   }
 
+  getProfile() {
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    this.loadToken();
+    headers.append('Authorization', this.authToken);
+    return this._http.get(
+      'http://localhost:3000/users/profile',
+      {headers: headers}
+    ).map(res => res.json());
+  }
+
   storeUserData(jwt, user) {
     // store token and user data
     localStorage.setItem('id_token', jwt);
@@ -38,6 +49,11 @@ export class AuthService {
     // set current token and user
     this.authToken = jwt;
     this.user = user;
+  }
+
+  loadToken() {
+    const jwt = localStorage .getItem('id_token');
+    this.authToken = jwt;
   }
 
   logout() {
