@@ -33,8 +33,7 @@ export class AuthService {
   getProfile() {
     const headers = new Headers();
     headers.append('Content-Type', 'application/json');
-    this.loadToken();
-    headers.append('Authorization', this.authToken);
+    headers.append('Authorization', this.loadToken());
     return this._http.get(
       'http://localhost:3000/users/profile',
       {headers: headers}
@@ -54,6 +53,7 @@ export class AuthService {
   loadToken() {
     const jwt = localStorage .getItem('id_token');
     this.authToken = jwt;
+    return jwt;
   }
 
   logout() {
