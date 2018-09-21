@@ -21,22 +21,19 @@ const userSchema = mongoose.Schema({
     }
 });
 
-// const User = module.exports = mongoose.model('User', userSchema);
-const User = mongoose.model('User', userSchema);
+let User = mongoose.model('User', userSchema);
+module.exports = User;
 
-// module.exports.getUserById = (id, callback) => {
-User.getUserById = (id, callback) => {
+module.exports.getUserById = (id, callback) => {
     User.findById(id, callback);
 };
 
-// module.exports.getUserByUsername = (name, callback) => {
-User.getUserByUsername = (name, callback) => {
+module.exports.getUserByUsername = (name, callback) => {
     const query = {username: name};
     User.findOne(query, callback);
 };
 
-// module.exports.addUser = (newUser, callback) => {
-User.addUser = (newUser, callback) => {
+module.exports.addUser = (newUser, callback) => {
     bcrypt.genSalt(10, (err, salt) => {
         bcrypt.hash(newUser.password, salt, (err, hash) => {
             console.log(">>> newUser");
@@ -49,12 +46,24 @@ User.addUser = (newUser, callback) => {
     });
 };
 
-// module.exports.comparePasswords = (candidatePassword, hash, callback) => {
-User.comparePasswords = (candidatePassword, hash, callback) => {
+module.exports.comparePasswords = (candidatePassword, hash, callback) => {
     bcrypt.compare(candidatePassword, hash, (err, isMatch) => {
         if (err) throw err;
         callback(null, isMatch);
     });
 };
 
-module.exports = User;
+module.exports.validateString = (str) => {
+    if ((str === undefined) || (str === null) || (str === '')) {
+        return false;
+    }
+    return true;
+};
+
+module.exports.isUsernameAvailable = (username, callback) => {
+    User.getUserByUsername(username, (err, result) => {
+        if (err) { throw err; }
+        if (result !== null) { callback(null, false); }
+        callback(null, true);
+    });
+};
