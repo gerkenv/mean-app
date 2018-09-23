@@ -53,7 +53,7 @@ var ValidateService = (function () {
     ], ValidateService);
     return ValidateService;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/validate.service.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/validate.service.js.map
 
 /***/ }),
 
@@ -88,7 +88,7 @@ if (__WEBPACK_IMPORTED_MODULE_2__environments_environment__["a" /* environment *
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["enableProdMode"])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_3__app_app_module__["a" /* AppModule */]);
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/main.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/main.js.map
 
 /***/ }),
 
@@ -122,7 +122,7 @@ var AppComponent = (function () {
     ], AppComponent);
     return AppComponent;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/app.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/app.component.js.map
 
 /***/ }),
 
@@ -212,7 +212,7 @@ var AppModule = (function () {
     ], AppModule);
     return AppModule;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/app.module.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/app.module.js.map
 
 /***/ }),
 
@@ -247,7 +247,7 @@ var DashboardComponent = (function () {
     ], DashboardComponent);
     return DashboardComponent;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/dashboard.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/dashboard.component.js.map
 
 /***/ }),
 
@@ -282,7 +282,7 @@ var HomeComponent = (function () {
     ], HomeComponent);
     return HomeComponent;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/home.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/home.component.js.map
 
 /***/ }),
 
@@ -346,7 +346,7 @@ var LoginComponent = (function () {
     return LoginComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/login.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/login.component.js.map
 
 /***/ }),
 
@@ -398,7 +398,7 @@ var NavbarComponent = (function () {
     return NavbarComponent;
     var _a, _b, _c;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/navbar.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/navbar.component.js.map
 
 /***/ }),
 
@@ -447,7 +447,7 @@ var ProfileComponent = (function () {
     return ProfileComponent;
     var _a, _b;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/profile.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/profile.component.js.map
 
 /***/ }),
 
@@ -529,7 +529,7 @@ var RegisterComponent = (function () {
     return RegisterComponent;
     var _a, _b, _c, _d;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/register.component.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/register.component.js.map
 
 /***/ }),
 
@@ -574,7 +574,7 @@ var AuthGuard = (function () {
     return AuthGuard;
     var _a, _b;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/auth.guard.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/auth.guard.js.map
 
 /***/ }),
 
@@ -590,7 +590,7 @@ var AuthGuard = (function () {
 var environment = {
     production: false
 };
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/environment.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/environment.js.map
 
 /***/ }),
 
@@ -653,7 +653,7 @@ module.exports = "<!-- <h1>\r\n  {{title}}\r\n</h1> -->\r\n<app-navbar></app-nav
 /***/ 687:
 /***/ (function(module, exports) {
 
-module.exports = "<h2 class=\"page-header\">Dashboard</h2>\n<p>Welcome to your dashboard</p>"
+module.exports = "<h2 class=\"page-header\">Dashboard</h2>\r\n<p>Welcome to your dashboard</p>"
 
 /***/ }),
 
@@ -674,14 +674,14 @@ module.exports = "<h2 class=\"page-header\">Login</h2>\r\n<form (submit)=\"onLog
 /***/ 690:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-primary\">\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">MEAN Auth App</a>\n\n  <button class=\"navbar-toggler\"\n          type=\"button\"\n          data-toggle=\"collapse\"\n          data-target=\"#navbarsExample04\"\n          aria-controls=\"navbarsExample04\"\n          aria-expanded=\"false\"\n          aria-label=\"Toggle navigation\">\n    <span class=\"navbar-toggler-icon\"></span>\n  </button>\n\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\n    <ul class=\"navbar-nav mr-auto\">\n      <!-- <li class=\"nav-item active\"> -->\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\n      </li>\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link\" href=\"#\">Link</a>\n      </li> -->\n      <!-- <li class=\"nav-item\">\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n      </li> -->\n    </ul>\n\n    <ul class=\"navbar-nav justify-content-end\">\n      <li *ngIf=\"_authService.loggedIn()\"\n          class=\"nav-item\"\n          [routerLinkActive]=\"['active']\"\n          [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\n      </li>\n      <li *ngIf=\"_authService.loggedIn()\"\n          class=\"nav-item\"\n          [routerLinkActive]=\"['active']\"\n          [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\n      </li>\n      <li *ngIf=\"!_authService.loggedIn()\"\n          class=\"nav-item\"\n          [routerLinkActive]=\"['active']\"\n          [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\n      </li>\n      <li *ngIf=\"!_authService.loggedIn()\"\n          class=\"nav-item\"\n          [routerLinkActive]=\"['active']\"\n          [routerLinkActiveOptions]=\"{exact:true}\">\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\n      </li>\n      <li *ngIf=\"_authService.loggedIn()\"\n          class=\"nav-item\">\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\n      </li>\n    </ul>\n\n  </div>\n</nav>"
+module.exports = "<nav class=\"navbar navbar-expand-md navbar-dark bg-primary\">\r\n  <a class=\"navbar-brand\" [routerLink]=\"['/']\">MEAN Auth App</a>\r\n\r\n  <button class=\"navbar-toggler\"\r\n          type=\"button\"\r\n          data-toggle=\"collapse\"\r\n          data-target=\"#navbarsExample04\"\r\n          aria-controls=\"navbarsExample04\"\r\n          aria-expanded=\"false\"\r\n          aria-label=\"Toggle navigation\">\r\n    <span class=\"navbar-toggler-icon\"></span>\r\n  </button>\r\n\r\n  <div class=\"collapse navbar-collapse\" id=\"navbarsExample04\">\r\n    <ul class=\"navbar-nav mr-auto\">\r\n      <!-- <li class=\"nav-item active\"> -->\r\n      <li class=\"nav-item\" [routerLinkActive]=\"['active']\" [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/']\">Home</a>\r\n      </li>\r\n      <!-- <li class=\"nav-item\">\r\n        <a class=\"nav-link\" href=\"#\">Link</a>\r\n      </li> -->\r\n      <!-- <li class=\"nav-item\">\r\n        <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\r\n      </li> -->\r\n    </ul>\r\n\r\n    <ul class=\"navbar-nav justify-content-end\">\r\n      <li *ngIf=\"_authService.loggedIn()\"\r\n          class=\"nav-item\"\r\n          [routerLinkActive]=\"['active']\"\r\n          [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/dashboard']\">Dashboard</a>\r\n      </li>\r\n      <li *ngIf=\"_authService.loggedIn()\"\r\n          class=\"nav-item\"\r\n          [routerLinkActive]=\"['active']\"\r\n          [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/profile']\">Profile</a>\r\n      </li>\r\n      <li *ngIf=\"!_authService.loggedIn()\"\r\n          class=\"nav-item\"\r\n          [routerLinkActive]=\"['active']\"\r\n          [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/login']\">Login</a>\r\n      </li>\r\n      <li *ngIf=\"!_authService.loggedIn()\"\r\n          class=\"nav-item\"\r\n          [routerLinkActive]=\"['active']\"\r\n          [routerLinkActiveOptions]=\"{exact:true}\">\r\n        <a class=\"nav-link\" [routerLink]=\"['/register']\">Register</a>\r\n      </li>\r\n      <li *ngIf=\"_authService.loggedIn()\"\r\n          class=\"nav-item\">\r\n        <a class=\"nav-link\" (click)=\"onLogoutClick()\" href=\"#\">Logout</a>\r\n      </li>\r\n    </ul>\r\n\r\n  </div>\r\n</nav>"
 
 /***/ }),
 
 /***/ 691:
 /***/ (function(module, exports) {
 
-module.exports = "<div *ngIf=\"user\">\n  <h2 class=\"page-header\">{{user.name}}</h2>\n  <ul class=\"list-group\">\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\n  </ul>\n</div>"
+module.exports = "<div *ngIf=\"user\">\r\n  <h2 class=\"page-header\">{{user.name}}</h2>\r\n  <ul class=\"list-group\">\r\n    <li class=\"list-group-item\">Username: {{user.username}}</li>\r\n    <li class=\"list-group-item\">Email: {{user.email}}</li>\r\n  </ul>\r\n</div>"
 
 /***/ }),
 
@@ -731,18 +731,18 @@ var AuthService = (function () {
     AuthService.prototype.registerUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this._http.post('http://localhost:3000/users/register', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.post('/users/register', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.authenticateUser = function (user) {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
-        return this._http.post('http://localhost:3000/users/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.post('/users/authenticate', user, { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.getProfile = function () {
         var headers = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["Headers"]();
         headers.append('Content-Type', 'application/json');
         headers.append('Authorization', this.loadToken());
-        return this._http.get('http://localhost:3000/users/profile', { headers: headers }).map(function (res) { return res.json(); });
+        return this._http.get('/users/profile', { headers: headers }).map(function (res) { return res.json(); });
     };
     AuthService.prototype.storeUserData = function (jwt, user) {
         // store token and user data
@@ -776,7 +776,7 @@ var AuthService = (function () {
     return AuthService;
     var _a;
 }());
-//# sourceMappingURL=E:/Projects/notes/js/mean/app/angular-src/src/auth.service.js.map
+//# sourceMappingURL=E:/Projects/deployment/mean-app/angular-src/src/auth.service.js.map
 
 /***/ })
 
