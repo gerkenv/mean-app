@@ -111,9 +111,9 @@ router.post('/authenticate', (req, res, next) => {
 
 // './profile' GET route
 router.get('/profile', passport.authenticate('jwt', {session: false}), (req, res, next) => {
-    console.log(">>> req");
-    console.log(req);
-    console.log(">>> req");
+    // console.log(">>> req");
+    // console.log(req);
+    // console.log(">>> req");
     res.json({user: req.user});
 });
 
