@@ -47,10 +47,16 @@ require('./config/passport')(passport);
 // define namespace for `users` routes
 app.use('/users', users);
 
-// '/' GET route
+// '/' home GET route
 app.get('/', (req, res) => {
     res.send("Hello");
     res.end();
+});
+
+// redirect all unknown requests to home page
+app.get('*', (req, res) => {
+//     res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.redirect('/');
 });
 
 app.listen(port, () => {
